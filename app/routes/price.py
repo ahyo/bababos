@@ -59,7 +59,7 @@ def price_inquiry():
         note = "new price"
         price = Price(
             desired_profit_margin=0.1,
-            cost_price=sku.price * 80 / 100,
+            cost_price=sku.price * (85 / 100),
             demand_factor=1,
             market_best_price=sku.price,
         ).calculate_price()
@@ -68,6 +68,10 @@ def price_inquiry():
         note = "from history po"
         price = history.selling_price
 
+        if price > sku.price:
+            # market lebih murah?
+            note = "from market price"
+            price = sku.price
     # save log
     log = Logs(
         customer_id=customer_id, sku_id=sku_id, price=price, timestamp=datetime.now()
