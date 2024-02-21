@@ -3,7 +3,8 @@
 
 Price Engine System 
 
-[![Powered By](https://skillicons.dev/icons?i=python,flask,postgres)]=
+## Powered By
+![Powered By](https://skillicons.dev/icons?i=python,flask,postgres)
 
 ## Authors
 
