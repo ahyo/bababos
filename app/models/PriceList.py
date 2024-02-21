@@ -14,3 +14,6 @@ class PriceList(db.Model):
 
     def findById(id):
         return PriceList.query.get(id)
+
+    def findBySku(id):
+        return PriceList.query.filter_by(sku_id=id).first()

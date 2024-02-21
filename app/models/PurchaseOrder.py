@@ -18,3 +18,10 @@ class PurchaseOrder(db.Model):
 
     def findById(id):
         return PurchaseOrder.query.get(id)
+
+    def findByHistory(c_id, s_id):
+        return (
+            PurchaseOrder.query.filter_by(customer_id=c_id, sku_id=s_id)
+            .order_by(PurchaseOrder.order_date)
+            .first()
+        )
