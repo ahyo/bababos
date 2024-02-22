@@ -1,4 +1,5 @@
 # Price Class for calculate best price
+# TODO: add ML algorithm
 
 
 class Price:

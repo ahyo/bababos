@@ -53,6 +53,7 @@ def price_inquiry():
         return response_error("Sku was not found")
 
     # check history
+    # TODO: move all logic to price class
     history = check_history(customer_id, sku_id)
     if history == None:
         # new price
@@ -60,7 +61,7 @@ def price_inquiry():
         price = Price(
             desired_profit_margin=0.1,
             cost_price=sku.price * (85 / 100),
-            demand_factor=1,
+            demand_factor=0.05,
             market_best_price=sku.price,
         ).calculate_price()
     else:
